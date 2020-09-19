@@ -1,0 +1,1 @@
+create png from visio: use 400 x 400 pixel / zoll

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export VflMon.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.648429in" height="0.217684in"
+		viewBox="0 0 46.6869 15.6732" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="2055" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#c05046;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#000000;font-family:Calibri;font-size:0.833336em;font-weight:bold}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1139-1" transform="translate(1.5,-0.75)" v:mID="1139" v:groupContext="group">
+			<title>Tabelle.1139</title>
+			<g id="shape1137-2" v:mID="1137" v:groupContext="shape" transform="translate(28.9301,-7.08661)">
+				<title>Tabelle.1137</title>
+				<path d="M0 15.67 L14.76 15.67" class="st1"/>
+			</g>
+			<g id="shape1138-5" v:mID="1138" v:groupContext="shape" transform="translate(0,-7.08661)">
+				<title>Tabelle.1138</title>
+				<path d="M0 15.67 L14.76 15.67" class="st1"/>
+			</g>
+			<g id="shape95-8" v:mID="95" v:groupContext="shape" transform="translate(14.7568,1.77636E-15)">
+				<title>Quadrat</title>
+				<desc>F</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="7.08661" cy="8.58661" width="14.18" height="14.1732"/>
+				<rect x="0" y="1.5" width="14.1732" height="14.1732" class="st2"/>
+				<text x="4.79" y="11.59" class="st3" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>F</text>			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export 20200703_HackZurich_2020.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.474738in" height="0.419456in"
+		viewBox="0 0 34.1811 30.2008" xml:space="preserve" color-interpolation-filters="sRGB" class="st5">
+	<v:documentProperties v:langID="2055" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#c05046;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st4 {fill:#000000;font-family:Calibri;font-size:0.833336em;font-weight:bold}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1136-1" transform="translate(1.5,-0.75)" v:mID="1136" v:groupContext="group">
+			<title>Tabelle.1136</title>
+			<g id="shape1133-2" v:mID="1133" v:groupContext="shape" transform="translate(0,-7.75359)">
+				<title>Tabelle.1133</title>
+				<path d="M0 30.2 L31.18 30.2" class="st1"/>
+			</g>
+			<g id="group1135-5" transform="translate(8.50394,0)" v:mID="1135" v:groupContext="group">
+				<title>Tabelle.1135</title>
+				<g id="shape1134-6" v:mID="1134" v:groupContext="shape" transform="translate(-23.1142,30.2008) rotate(-90)">
+					<title>Tabelle.1134</title>
+					<path d="M0 30.2 L14.53 30.2" class="st2"/>
+				</g>
+				<g id="shape83-9" v:mID="83" v:groupContext="shape" transform="translate(0,-14.5276)">
+					<title>Quadrat</title>
+					<desc>T</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="7.08661" cy="23.1142" width="14.18" height="14.1732"/>
+					<rect x="0" y="16.0276" width="14.1732" height="14.1732" class="st3"/>
+					<text x="4.61" y="26.11" class="st4" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>T</text>				</g>
+			</g>
+		</g>
+	</g>
+</svg>

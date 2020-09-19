@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export Crossing.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.648197in" height="0.395997in"
+		viewBox="0 0 46.6702 28.5118" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="2055" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#c05046;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1122-1" transform="translate(1.5,-1.5)" v:mID="1122" v:groupContext="group">
+			<title>Tabelle.1122</title>
+			<g id="shape378-2" v:mID="378" v:groupContext="shape" transform="translate(28.9301,44.2677) scale(1,-1)">
+				<title>Tabelle.378</title>
+				<path d="M0 28.51 L14.74 28.51" class="st1"/>
+			</g>
+			<g id="shape392-5" v:mID="392" v:groupContext="shape" transform="translate(-6.66836,28.5118) rotate(-90)">
+				<title>Tabelle.392</title>
+				<path d="M0 28.51 L25.51 28.51" class="st1"/>
+			</g>
+			<g id="shape1121-8" v:mID="1121" v:groupContext="shape" transform="translate(3.59712E-14,44.2677) scale(1,-1)">
+				<title>Tabelle.1121</title>
+				<path d="M0 28.51 L14.74 28.51" class="st1"/>
+			</g>
+		</g>
+	</g>
+</svg>

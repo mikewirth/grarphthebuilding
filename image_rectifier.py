@@ -132,7 +132,7 @@ class ImageRectifier():
 
     def preprocess(self):
         img = cv2.cvtColor(self.raw_img, cv2.COLOR_BGR2GRAY)
-        blur = cv2.GaussianBlur(img, (9, 9), 0)
+        blur = cv2.GaussianBlur(img, (3, 3), 0)
         return cv2.Canny(blur, 50, 200)
 
     def draw_line(self, img, rho, theta, color):

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export HExg-1.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.673556in" height="0.601542in"
+		viewBox="0 0 48.496 43.311" xml:space="preserve" color-interpolation-filters="sRGB" class="st4">
+	<v:documentProperties v:langID="2055" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#c05046;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st4 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1111-1" transform="translate(1.5,-0.75)" v:mID="1111" v:groupContext="group">
+			<title>Tabelle.1111</title>
+			<g id="shape1105-2" v:mID="1105" v:groupContext="shape" transform="translate(31.1811,-34.0157)">
+				<title>Tabelle.1105</title>
+				<path d="M0 43.31 L14.31 43.31" class="st1"/>
+			</g>
+			<g id="shape1106-5" v:mID="1106" v:groupContext="shape" transform="translate(31.1811,-8.50394)">
+				<title>Tabelle.1106</title>
+				<path d="M0 43.31 L14.31 43.31" class="st1"/>
+			</g>
+			<g id="shape1107-8" v:mID="1107" v:groupContext="shape" transform="translate(-6.39488E-14,-34.0157)">
+				<title>Tabelle.1107</title>
+				<path d="M0 43.31 L14.31 43.31" class="st1"/>
+			</g>
+			<g id="shape1108-11" v:mID="1108" v:groupContext="shape" transform="translate(-6.39488E-14,-8.50394)">
+				<title>Tabelle.1108</title>
+				<path d="M0 43.31 L14.31 43.31" class="st1"/>
+			</g>
+			<g id="shape1109-14" v:mID="1109" v:groupContext="shape" transform="translate(15.5906,0)">
+				<title>Tabelle.1109</title>
+				<rect x="0" y="1.5" width="14.1732" height="41.811" class="st2"/>
+			</g>
+			<g id="shape1110-16" v:mID="1110" v:groupContext="shape" transform="translate(-25.4278,29.4065) rotate(-71.2742)">
+				<title>Tabelle.1110</title>
+				<path d="M0 43.31 L44.15 43.31" class="st3"/>
+			</g>
+		</g>
+	</g>
+</svg>

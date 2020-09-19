@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export Pu.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.474738in" height="0.45333in"
+		viewBox="0 0 34.1811 32.6398" xml:space="preserve" color-interpolation-filters="sRGB" class="st5">
+	<v:documentProperties v:langID="2055" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#c05046;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st3 {fill:#000000;font-family:Calibri;font-size:0.833336em;font-weight:bold}
+		.st4 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group1125-1" transform="translate(1.5,0)" v:mID="1125" v:groupContext="group">
+			<title>Tabelle.1125</title>
+			<g id="shape1126-2" v:mID="1126" v:groupContext="shape" transform="translate(0,-10.2205)">
+				<title>Tabelle.1126</title>
+				<path d="M0 32.64 L31.18 32.64" class="st1"/>
+			</g>
+			<g id="group1127-5" transform="translate(8.50394,0)" v:mID="1127" v:groupContext="group">
+				<title>Tabelle.1127</title>
+				<g id="shape1128-6" v:mID="1128" v:groupContext="shape" transform="translate(0,-17.7166)">
+					<title>Kreis.276</title>
+					<desc>P</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="7.08661" cy="25.5532" width="12.41" height="10.6299"/>
+					<path d="M0 25.55 A7.08661 7.08661 0 0 1 14.17 25.55 A7.08661 7.08661 0 1 1 0 25.55 Z" class="st2"/>
+					<text x="4.89" y="28.55" class="st3" v:langID="2055"><v:paragraph v:horizAlign="1"/><v:tabList/>P</text>				</g>
+				<g id="shape1129-9" v:mID="1129" v:groupContext="shape" transform="translate(-25.5532,29.4508) rotate(-90)">
+					<title>Tabelle.1129</title>
+					<path d="M0 32.64 L14.53 32.64" class="st4"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

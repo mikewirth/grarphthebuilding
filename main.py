@@ -1,14 +1,19 @@
 from os.path import abspath, join
+import time
 
 import cv2
 import numpy as np
 
 from graph import create_graph
 from draw import OverlayDrawer
+from detect import GraphGenerator
 from rectify import ImageRectifier
 
 
 DATA_PATH = join(abspath('.'), 'data')
+
+
+_global_wait_lock = True
 
 
 def start_capture():
@@ -18,39 +23,19 @@ def start_capture():
     return cap
 
 
-def get_click_event_handler(capture):
-    def capture_still(event, x, y, flags, param):
-        if event == cv2.EVENT_LBUTTONDOWN:
-            print("click detected")
-            capture.read()
-
-    return capture_still
-
-
 if __name__ == "__main__":
-    # TODO: Replace mock graph with graph data from real detection
-    graph = create_graph(
-        nodes=[
-            {'id': "G1", 'label': "G", 'coordinates': [128, 250]},
-            {'id': "Ts1", 'label': "Ts", 'coordinates': [250, 150]},
-            {'id': "P1", 'label': "Ps", 'coordinates': [401, 151]},
-            {'id': "C1", 'label': "C", 'coordinates': [403, 250]},
-            {'id': "Fs1", 'label': "Fs", 'coordinates': [250, 350]}
-        ],
-        edges=[
-            {'source': "G1", 'target': "Ts1"},
-            {'source': "Ts1", 'target': "P1"},
-            {'source': "P1", 'target': "C1"},
-            {'source': "C1", 'target': "Fs1"},
-            {'source': "Fs1", 'target': "G1"},
-            {'source': "C1", 'target': "G1"}
-        ]
-    )
-    drawer = OverlayDrawer(graph)
-
     capture = start_capture()
     cv2.namedWindow('window')
-    cv2.setMouseCallback('window', get_click_event_handler(capture))
+
+    # Show video feed until diagram correctly positioned
+    while(True):
+        ret, frame = capture.read()
+        cv2.imshow('window', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+
+    # Start real detection loop
     while(True):
         # Capture frame-by-frame
         ret, frame = capture.read()
@@ -59,15 +44,21 @@ if __name__ == "__main__":
         (width, height) = frame.shape[:2]
 
         # Rectify captured image
+        print("Trying to rectify the image...")
+        t_start = time.time()
         #image_rectifier = ImageRectifier(frame)
         #image_rectifier = ImageRectifier(join(DATA_PATH, 'examples_png/ex1_pic.png'))
         #cv2.imshow('rectified', image_rectifier.img)
 
         # TODO: Detect symbols/edges and build graph
-        # -> detect.py
+        #detected_graph = GraphGenerator(cv2.imread(join(DATA_PATH, 'examples_png/ex0.png'))).graph
+        print("Rectified in %f seconds... now detecting the graph" % (time.time() - t_start))
+        detected_graph = GraphGenerator(frame).graph
 
         # Overlay the detected graph over original image
-        drawn_image = drawer.draw(*frame.shape[:2])
+        print("Graph detected in %f seconds! Now overlaying the symbols..." % (time.time() - t_start))
+        graph = create_graph(**detected_graph)
+        drawn_image = OverlayDrawer(graph).draw(*frame.shape[:2])
 
         # FIXME: More complicated adding needed so the overlay is not transparent
         # Where blank_image values are not 0, we want to override the values in gray

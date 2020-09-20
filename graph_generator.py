@@ -18,7 +18,9 @@ type_label_map = {
     'TMon': 'Tm',
     'VflMon': 'Fm',
     'Pu': 'P',
-    'Vlv': 'V'
+    'Vlv': 'V',
+    'Mxv-1': 'node',
+    'Mxv-2': 'node'
 }
 
 
@@ -34,20 +36,9 @@ class GraphGenerator():
 
         kernel = np.ones((15, 15), np.uint8)
         img_grey = cv2.erode(img_grey, kernel)
-        # img_grey = cv2.dilate(img_grey, kernel)
-        # cv2.imshow('Image', img_grey3)
-
-        # lines = cv2.HoughLinesP(img_grey, 1, np.pi/180, 30, 30)
-        # print(lines)
-        # for l in lines:
-        #     x1,y1,x2,y2 = l[0]
-        #     print(x1,y1)
-        #     cv2.line(img, (x1,y1), (x2,y2), (0,255,0), 2)
 
         fld = cv2.ximgproc.createFastLineDetector()
         lines = fld.detect(img_grey)
-
-        result_img = fld.drawSegments(img_grey, lines)
 
         return [l[0].tolist() for l in lines]
 
@@ -58,9 +49,8 @@ class GraphGenerator():
 
         img_grey[img_grey < 200] = 0
 
-        contours, h = cv2.findContours(
+        contours, _ = cv2.findContours(
             img_grey, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-        # img = cv2.cvtColor(img_grey, cv2.COLOR_GRAY2BGR)
 
         boxes = []
         for c in contours:
@@ -128,19 +118,15 @@ class GraphGenerator():
 
             # TODO weird output
             node = self.match_img_symbols(img_gray_cropped, symbols)
-            node[list(node)[0]] = [int(bb[1] + (bb[3] - bb[1]) / 2.0),
-                                   int(bb[0] + (bb[2] - bb[0]) / 2.0)]
-
-            if node != None:
+            if node is not None:
+                node[list(node)[0]] = [int(bb[1] + (bb[3] - bb[1]) / 2.0),
+                                       int(bb[0] + (bb[2] - bb[0]) / 2.0)]
                 nodes.append(node)
 
         return nodes
 
     def build_graph(self, nodes, edges):
         """ connects lines and nodes to form a graph """
-        print("building graph")
-
-        print(nodes, edges)
 
         node_list = []
         edge_list = []
@@ -160,7 +146,6 @@ class GraphGenerator():
         for edge in edges:
             start = np.array([edge[1], edge[0]])
             end = np.array([edge[3], edge[2]])
-            print(start, end)
             best_source = None
             best_source_dist = np.Inf
             best_target = None
@@ -176,7 +161,6 @@ class GraphGenerator():
                 if best_target_dist > target_dist:
                     best_target = node['id']
                     best_target_dist = target_dist
-            print(best_source_dist, best_target_dist)
             edge_list.append({'source': best_source, 'target': best_target})
 
         graph = {'nodes': node_list, 'edges': edge_list}
@@ -187,7 +171,6 @@ class GraphGenerator():
         # filter out duplicates
         for l in lines:
             if ((l[0]-l[2])**2 + (l[1]-l[3])**2) < DIST_THRESHOLD:
-                print('skipping short line', l)
                 continue
 
             skip = False
@@ -195,13 +178,11 @@ class GraphGenerator():
                 sd = (ul[0]-l[2])**2 + (ul[1]-l[3])**2
                 ed = (ul[2]-l[0])**2 + (ul[3]-l[1])**2
                 if sd < DIST_THRESHOLD and ed < DIST_THRESHOLD:
-                    print("duplicate")
                     skip = True
                     break
                 sd = (ul[0]-l[0])**2 + (ul[1]-l[3])**2
                 ed = (ul[2]-l[2])**2 + (ul[1]-l[3])**2
                 if sd < DIST_THRESHOLD and ed < DIST_THRESHOLD:
-                    print("duplicate")
                     skip = True
                     break
 
@@ -218,30 +199,25 @@ class GraphGenerator():
                 ed = (e[2]-ul[2])**2 + (e[3]-ul[3])**2
                 if ed < DIST_THRESHOLD:
                     edges[i] = [e[0], e[1], ul[0], ul[1]]
-                    print('merged line')
                     skip = True
                     break
                 if sd < DIST_THRESHOLD:
                     edges[i] = [e[2], e[3], ul[2], ul[3]]
-                    print('merged line')
                     skip = True
                     break
                 sd = (e[0]-ul[2])**2 + (e[1]-ul[3])**2
                 ed = (e[2]-ul[0])**2 + (e[3]-ul[1])**2
                 if ed < DIST_THRESHOLD:
                     edges[i] = [e[0], e[1], ul[2], ul[3]]
-                    print('merged line')
                     skip = True
                     break
                 if sd < DIST_THRESHOLD:
                     edges[i] = [e[2], e[3], ul[0], ul[1]]
-                    print('merged line')
                     skip = True
                     break
             if not skip:
                 edges.append(ul)
 
-        print(len(edges))
         # for line in edges:
         #     l = line
         #     # cv2.line(img_rgb, (int(l[0]), int(l[1])),
@@ -256,23 +232,10 @@ class GraphGenerator():
     def generate_graph_from_image(self, img):
         """ takes an image and generates a graph """
         lines = self.segment_lines(img)
-
-        for l in lines:
-            print(l)
-
         edges = self.filter_and_merge_lines(lines)
-        print('-----------------')
-        for e in edges:
-            print(e)
-
         bounding_boxes = self.segment_symbols(img)
-        print(bounding_boxes)
-
         nodes = self.detect_symbol(img, bounding_boxes)
-        print(nodes)
-
         graph = self.build_graph(nodes, edges)
-
         return graph
 
 

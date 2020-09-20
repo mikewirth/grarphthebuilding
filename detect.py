@@ -24,7 +24,7 @@ type_label_map = {
 
 class GraphGenerator():
     def __init__(self, img):
-        self.graph = self.generate_graph_from_image(img.copy())
+        self.graph = self.generate_graph_from_image(img)
 
     def segment_lines(self, img):
         """ returns line segments, lines are not guaranteed to be unique """

@@ -9,8 +9,6 @@ BORDER_THICKNESS = 3
 FONT = font = cv2.FONT_HERSHEY_SIMPLEX
 FONT_SCALE = 1
 
-COLOR_CYCLE = 1
-
 
 def draw_node(canvas, node, color):
     node_x, node_y = node.coordinates

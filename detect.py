@@ -67,7 +67,8 @@ class GraphGenerator():
             [X, Y, W, H] = cv2.boundingRect(c)
 
             cv2.rectangle(img, (X, Y), (X + W, Y + H), (0, 255, 0), 2)
-            boxes.append((X, Y, X + W, Y + H))
+            # XXX: hack to enable matching of generators
+            boxes.append((X+5, Y+5, X-5 + W, Y-5 + H))
 
         return boxes
 

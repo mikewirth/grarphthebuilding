@@ -9,6 +9,8 @@ BORDER_THICKNESS = 3
 FONT = font = cv2.FONT_HERSHEY_SIMPLEX
 FONT_SCALE = 1
 
+COLOR_CYCLE = 1
+
 
 def draw_node(canvas, node, color):
     node_x, node_y = node.coordinates
@@ -51,17 +53,18 @@ def draw_edge(canvas, source, target, color):
 
 
 class OverlayDrawer():
+    COLOR_CYCLE = 1
+
     def __init__(self, graph):
-        self.colorcycle = 1
         self.graph = graph
 
     def calc_color(self):
         frequency = 0.3
-        red   = math.sin(frequency * self.colorcycle + 0) * 127 + 128;
-        green = math.sin(frequency * self.colorcycle + 2) * 127 + 128;
-        blue  = math.sin(frequency * self.colorcycle + 4) * 127 + 128;
+        red   = math.sin(frequency * OverlayDrawer.COLOR_CYCLE + 0) * 127 + 128;
+        green = math.sin(frequency * OverlayDrawer.COLOR_CYCLE + 2) * 127 + 128;
+        blue  = math.sin(frequency * OverlayDrawer.COLOR_CYCLE + 4) * 127 + 128;
 
-        self.colorcycle += 1
+        OverlayDrawer.COLOR_CYCLE += 1
         return (blue, green, red)
 
     def draw(self, width, height):
@@ -72,6 +75,9 @@ class OverlayDrawer():
             draw_node(blank_image, node, color)
 
         for edge in self.graph.edges:
+            if None in (edge.source, edge.target):
+                continue
+
             source = self.graph.get_node_by_id(edge.source)
             target = self.graph.get_node_by_id(edge.target)
             draw_edge(blank_image, source, target, color)

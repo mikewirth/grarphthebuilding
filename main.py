@@ -39,6 +39,7 @@ if __name__ == "__main__":
     while(True):
         # Capture frame-by-frame
         ret, frame = capture.read()
+        frame = cv2.imread(join(DATA_PATH, "examples_png/ex0_big.png"))
 
         # Blank frame
         (width, height) = frame.shape[:2]
@@ -46,7 +47,7 @@ if __name__ == "__main__":
         # Rectify captured image
         print("Trying to rectify the image...")
         t_start = time.time()
-        #image_rectifier = ImageRectifier(frame)
+        image_rectifier = ImageRectifier(frame)
         #image_rectifier = ImageRectifier(join(DATA_PATH, 'examples_png/ex1_pic.png'))
         #cv2.imshow('rectified', image_rectifier.img)
 
@@ -58,12 +59,12 @@ if __name__ == "__main__":
         # Overlay the detected graph over original image
         print("Graph detected in %f seconds! Now overlaying the symbols..." % (time.time() - t_start))
         graph = create_graph(**detected_graph)
-        drawn_image = OverlayDrawer(graph).draw(*frame.shape[:2])
+        overlay_image = OverlayDrawer(graph).draw(*frame.shape[:2])
 
         # FIXME: More complicated adding needed so the overlay is not transparent
         # Where blank_image values are not 0, we want to override the values in gray
-        gray = cv2.addWeighted(drawn_image, 1.0, frame, 1.0, 0.0)
-        #gray = gray + drawn_image
+        gray = cv2.addWeighted(overlay_image, 1.0, frame, 0.5, 0.5)
+        #gray = gray + overlay_image
 
         # Display the resulting composed image
         cv2.imshow('window', gray)

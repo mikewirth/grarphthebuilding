@@ -18,7 +18,7 @@ type_label_map = {
     'TMon': 'Tm',
     'VflMon': 'Fm',
     'Pu': 'P',
-    'Vlv': 'V'
+    'Vlv': 'V',
 }
 
 
@@ -150,9 +150,13 @@ class GraphGenerator():
                 id_counts[node_type] = 0
             else:
                 id_counts[node_type] += 1
+
+            label = node_type
+            if node_type in type_label_map:
+                label = type_label_map[node_type]
             node_list.append(
                 {'id': '{}{}'.format(node_type, id_counts[node_type]),
-                 'label': type_label_map[node_type],
+                 'label': label,
                  'coordinates': node[node_type]})
 
         for edge in edges:

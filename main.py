@@ -12,6 +12,14 @@ from rectify import ImageRectifier
 
 DATA_PATH = join(abspath('.'), 'data')
 
+IMAGE_FILENAME = 'ex0_big.png'
+IMAGE_FILENAME = 'ex4.png'
+
+# IMAGE_FILENAME = 'ex3.png'
+
+APP_WINDOW = 'GrARph The Building - ' + IMAGE_FILENAME
+
+AR_MODE = False
 
 _global_wait_lock = True
 
@@ -24,25 +32,28 @@ def start_capture():
 
 
 if __name__ == "__main__":
-    capture = start_capture()
-    cv2.namedWindow('window')
+    if AR_MODE:
+        capture = start_capture()
+        cv2.namedWindow('window')
 
-    # Show video feed until diagram correctly positioned
-    while(True):
-        ret, frame = capture.read()
-        cv2.imshow('window', frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        # Show video feed until diagram correctly positioned
+        while(True):
+            ret, frame = capture.read()
+            cv2.imshow('window', frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
 
     # Start real detection loop
     while(True):
         # Capture frame-by-frame
-        ret, frame = capture.read()
-        frame = cv2.imread(join(DATA_PATH, "examples_png/ex0_big.png"))
+        if AR_MODE:
+            ret, frame = capture.read()
+        else:
+            frame = cv2.imread(join(DATA_PATH, "examples_png/" + IMAGE_FILENAME))
 
         # Blank frame
-        (width, height) = frame.shape[:2]
+        (height, width) = frame.shape[:2]
 
         # Rectify captured image
         print("Trying to rectify the image...")
@@ -67,10 +78,19 @@ if __name__ == "__main__":
         #gray = gray + overlay_image
 
         # Display the resulting composed image
-        cv2.imshow('window', gray)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        cv2.namedWindow(APP_WINDOW, cv2.WINDOW_NORMAL)
+        # gray = cv2.resize(gray, (1024, int(1024 * (height/width))))
+        cv2.imshow(APP_WINDOW, gray)
+
+        if AR_MODE:
+            if cv2.waitKey(1) & 0xFF in [27, ord('q')]:
+                break
+        else:        
+            cv2.waitKey(0) # & 0xFF in [27, ord('q')]:
             break
 
-    # When everything done, release the capture
-    capture.release()
+    if AR_MODE:
+        # When everything done, release the capture
+        capture.release()
+
     cv2.destroyAllWindows()
